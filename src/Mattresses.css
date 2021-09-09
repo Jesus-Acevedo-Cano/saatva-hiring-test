@@ -1,0 +1,15 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  padding: 25px 70px;
+}
+.mattess_image {
+  position: relative;
+  width: 50%
+}
+.mattresses_selection {
+
+}
+.buttons_section {
+  
+}
