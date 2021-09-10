@@ -6,6 +6,7 @@ import loom_img from './assets/images/loom-carousel.jpg'
 import zen_img from './assets/images/zen-carousel.jpg'
 
 function Mattresses() {
+  const [count, setCount] = useState(0)
   const [value, setValue] = useState("classic")
   const mattresses = data.mattresses
   let source = classic_img;
@@ -16,7 +17,7 @@ function Mattresses() {
         <img className="mattess_image" src={source} alt="mattresses images"></img>
         <div className="mattresses_selection">
           <h2>Choose Your Mattress</h2>
-          <p>SELECT MATTRESS TYPE</p>
+          <p className="bolder">SELECT MATTRESS TYPE</p>
           <div className="buttons_section">
             <button onClick={() =>{setValue("classic")}}>Saatva Classic</button>
             <button onClick={() =>{setValue("loom")}}>Loom & Leaf</button>
@@ -25,11 +26,17 @@ function Mattresses() {
             return <button key={`${value}`} onClick={() =>{setValue(value)}}>{value}</button>
           })} */}
           </div>
-          <p>{`${mattresses[value]["name"]}`} Mattress</p>
-          <p>{Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0,maximumFractionDigits:0}).format(mattresses[value]["price"])}</p>
+          <div className="name_price">
+            <p className="bolder">{`${mattresses[value]["name"]}`} Mattress</p>
+            <p>{Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0,maximumFractionDigits:0}).format(mattresses[value]["price"])}</p>
+          </div>
+          <div className="name_price">
+            <p className="bolder">Review rating:</p>
+            <p>{`${mattresses[value]["reviewRating"]}`}</p>
+          </div>
+          <button className="add_btn" onClick={() =>{setCount(count + 1)}}>Add to Cart</button>
         </div>
       </div>
   );
 }
-
 export default Mattresses;
