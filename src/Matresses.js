@@ -1,12 +1,13 @@
 import './Mattresses.css'
 import React, { useState } from 'react'
 import data from './assets/mattresses.json'
+import { shoppingCart } from './App'
 import classic_img from './assets/images/classic-carousel.jpg'
 import loom_img from './assets/images/loom-carousel.jpg'
 import zen_img from './assets/images/zen-carousel.jpg'
 
+
 function Mattresses() {
-  const [count, setCount] = useState(0)
   const [value, setValue] = useState("classic")
   const mattresses = data.mattresses
   let source = classic_img;
@@ -34,9 +35,11 @@ function Mattresses() {
             <p className="bolder">Review rating:</p>
             <p>{`${mattresses[value]["reviewRating"]}`}</p>
           </div>
-          <button className="add_btn" onClick={() =>{setCount(count + 1)}}>Add to Cart</button>
+          {/* button to add item to cart depends on his value acting as a key */}
+          <button className="add_btn" onClick={() =>{shoppingCart.push(mattresses[value])}}>Add to Cart</button>
         </div>
       </div>
   );
 }
+
 export default Mattresses;
