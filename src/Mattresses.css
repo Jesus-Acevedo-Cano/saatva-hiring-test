@@ -1,5 +1,5 @@
 .body {
-  background-color: whitesmoke;
+  background-color: #fafafb;
   display: flex;
   flex-direction: row;
   padding: 25px 70px;
@@ -50,12 +50,12 @@
 }
 .add_btn {
   width: 100%;
-  color: white;
-  background-color: darkorange;
+  color: #fff;
+  background-color: #d5aa63;
   font-family: 'Questrial';
   font-size: medium;
   height: 45px;
-  border: none;
+  border-color: #d5aa63;
 }
 .add_btn:hover {
   cursor: pointer;
