@@ -6,7 +6,6 @@ import classic_img from './assets/images/classic-carousel.jpg'
 import loom_img from './assets/images/loom-carousel.jpg'
 import zen_img from './assets/images/zen-carousel.jpg'
 
-
 function Mattresses() {
   const [value, setValue] = useState("classic")
   const mattresses = data.mattresses
@@ -14,8 +13,8 @@ function Mattresses() {
   if (value === "loom") source = loom_img;
   else if (value === "zen") source = zen_img;
   return (
-    <div className="body">
-      <img className="mattess_image" src={source} alt="mattresses images"></img>
+    <div className="mattresses_body">
+      <img className="mattress_image" src={source} alt="mattresses images"></img>
       <div className="mattresses_selection">
         <h2>Choose Your Mattress</h2>
         <p className="bolder">SELECT MATTRESS TYPE</p>
@@ -24,7 +23,8 @@ function Mattresses() {
           <button onClick={() => { setValue("loom") }}>Loom & Leaf</button>
           <button onClick={() => { setValue("zen") }}>Zenhaven</button> */}
           {Object.keys(mattresses).map((value, index) => {
-            return <button className="buttons_section" key={`${value}`} onClick={() => { setValue(value) }}>{mattresses[value]["name"]}</button>
+            return <button key={`${value}`} onClick={() => { 
+              setValue(value) }}>{mattresses[value]["name"]}</button>
           })}
         </div>
         <div className="name_price">
