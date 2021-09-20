@@ -15,7 +15,9 @@ function Mattresses() {
   else if (value === "zen") source = zen_img;
   return (
     <div className="mattresses_body">
-      <img className="mattress_image" src={source} alt="mattresses images"></img>
+      <div className="image_section">
+        <img className="mattress_image" src={source} alt="mattresses images"></img>
+      </div>
       <div className="mattresses_selection">
         <h2>Choose Your Mattress</h2>
         <p className="bolder">SELECT MATTRESS TYPE</p>
